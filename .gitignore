@@ -137,5 +137,6 @@ dist
 
 *.sql
 *.sqlite
+*.db
 
 .idea

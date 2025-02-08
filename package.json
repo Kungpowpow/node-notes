@@ -1,12 +1,18 @@
 {
   "name": "notes",
   "version": "1.0.0",
-  "description": "Node Notes Fullstack Assessment",
+  "description": "using Node v20.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
   },
-  "keywords": [],
-  "author": "Adam Raschig",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
 }
