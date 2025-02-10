@@ -7,7 +7,7 @@ const port = 8080;
 export const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors({credentials: true}));
 //I think I'll do without session and just use DB. Each server can be a user.
 // app.use(session({
