@@ -14,6 +14,12 @@ function Create() {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
+        if (!formData.title.trim() || !formData.content.trim()) {
+            setError('Title and content cannot be empty');
+            return;
+        }
+
         try {
             const response = await api.post<{success: boolean, data: Note}>('/api/notes', formData);
             if (response.data.success) {

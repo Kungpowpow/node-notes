@@ -39,6 +39,13 @@ function Edit({ id }: {id: string}) {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
+        if (!formData.title.trim() || !formData.content.trim()) {
+            setError('Title and content cannot be empty');
+            return;
+        }
+
+
         try {
             const response = await api.put<{success: boolean, data: Note}>(`/api/notes/${id}`, formData);
             if (response.data.success) {
